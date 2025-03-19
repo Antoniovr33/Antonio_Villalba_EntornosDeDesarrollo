@@ -7,20 +7,36 @@ public class Main {
         Cuadrado cuadrado1 = new Cuadrado(3, 3, "rojo");
 
         // Calcula area cuadrado usando el método calcularArea
-        double areaCuadrado = cuadrado1.calcularArea();
+        double areaCuadrado = calcularAreaCuadrado(cuadrado1);
         System.out.println("Area cuadrado: " + areaCuadrado);
 
         // Calcula area circulo usando el método calcularArea
-        double areaCirculo = circulo1.calcularArea();
+        double areaCirculo = calcularAreaCirculo(circulo1);
         System.out.println("Area circulo: " + areaCirculo);
 
-        // Diferencia entre areas de cuadrado y circulo
-        double diferencia = areaCuadrado - areaCirculo;
+        // Diferencia entre areas de cuadrado y circuloS
+        double diferencia = calcularDiferencia(areaCuadrado, areaCirculo);
         System.out.println("Diferencia áreas: " + diferencia);
 
         // Imprimir datos
-        System.out.println("Cuadrado: " + cuadrado1);
-        System.out.println("Circulo: " + circulo1);
+        imprimirResultados(cuadrado1, circulo1, diferencia);
+    }
+
+    private static double calcularAreaCuadrado(Cuadrado cuadrado) {
+        return cuadrado.calcularArea();
+    }
+
+    private static double calcularAreaCirculo(Circulo circulo) {
+        return circulo.calcularArea();
+    }
+
+    private static double calcularDiferencia(double areaCuadrado, double areaCirculo) {
+        return areaCuadrado - areaCirculo;
+    }
+
+    private static void imprimirResultados(Cuadrado cuadrado, Circulo circulo, double diferencia) {
+        System.out.println("Cuadrado: " + cuadrado);
+        System.out.println("Circulo: " + circulo);
         System.out.println("Diferencia: " + diferencia);
     }
 }
